@@ -97,11 +97,18 @@ class MainActivity : AppCompatActivity() {
                 extra = 0
             }
 //            if ((currentMonth < editTextMonth.text.toString().toInt()) or (currentMonth == 0)){
+
+
             if (editTextMonth.text.toString().toInt() > currentMonth){
                 calculatedMonth = calculatedMonth + 12
                 extra = 1
             }
             calculatedMonth = calculatedMonth - editTextMonth.text.toString().toInt()
+
+            if (calculatedMonth < 0){
+                calculatedMonth = calculatedMonth + 12
+                extra = 1
+            }
 //            textViewCalculatedAge.text = "Age: " + calculatedMonth
 ////--------------------------------------------------------------------------------------------------
 
